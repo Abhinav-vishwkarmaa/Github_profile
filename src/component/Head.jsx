@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+// import React, { use } from "react";
+import { useState ,useEffect} from "react";
 
 const Head = () => {
   async function searchProfile() {
@@ -10,7 +10,9 @@ const Head = () => {
     const data = await profile.json();
     setData(data);
   }
-
+useEffect(() => {
+    searchProfile();
+  }, []);
 const [Number, setNumber] = useState(10);
 const [data, setData] = useState([]);  
 const num = Math.floor(Math.random()*10000) + 1;
